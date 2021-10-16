@@ -1,0 +1,15 @@
+Executing a Command
+Use kubectl exec to issue commands in a container or to open a shell in a container.
+
+Receive output from a command run on the first container in a pod:
+
+kubectl exec [pod-name] -- [command]
+Get output from a command run on a specific container in a pod:
+
+kubectl exec [pod-name] -c [container-name] -- [command]
+Run /bin/bash from a specific pod. The received output comes from the first container:
+
+kubectl exec -ti [pod-name] -- /bin/bash
+
+kubectl exec --stdin --tty <pod name> -- /bin/bash
+
